@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31")
 }
 
 tasks.test {

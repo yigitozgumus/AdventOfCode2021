@@ -1,6 +1,5 @@
-import days.Day1Solution
-import days.Day2Solution
+import days.Day3Solution
 
 fun main() {
-    Day2Solution().solveAnother()
+    Day3Solution("inputs/day3.txt").part1()
 }

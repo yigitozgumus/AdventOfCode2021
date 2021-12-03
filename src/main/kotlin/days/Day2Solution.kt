@@ -30,21 +30,22 @@ fun LocationWithAim.updateLocation(command: Command) {
     }
 }
 
-class Day2Solution: BaseSolution {
+class Day2Solution(val pathName: String): BaseSolution {
 
-    private fun createCommandList() = File("inputs/day2.txt")
-        .readLines()
+    override val inputList: List<String> by lazy { File(pathName).readLines() }
+
+    private fun createCommandList() = inputList
         .map { it.split(" ") }
         .map { Command(it[0], it[1].toInt()) }
 
-    override fun solve() {
+    override fun part1() {
         val commandList = createCommandList()
         val location = Location(0,0)
         commandList.forEach { location.updateLocation(it) }
         println(location.depth * location.horizontal)
     }
 
-    override fun solveAnother() {
+    override fun part2() {
         val location = LocationWithAim(0,0,0)
         createCommandList().forEach { location.updateLocation(it) }
         println(location.depth * location.horizontal)
