@@ -6,9 +6,8 @@ import kotlin.math.ceil
 
 const val zeroCode = '0'.code
 
-class Day3Solution(val pathName: String) : BaseSolution {
+class Day3Solution(val inputList: List<String>) : BaseSolution {
 
-    override val inputList by lazy {File(pathName).readLines()}
     val formattedInput by lazy { inputList.map { it.toCharArray().map { it.code - zeroCode } } }
 
     private fun List<Boolean>.mapToRate(): Int = Integer.parseInt(
@@ -48,4 +47,5 @@ class Day3Solution(val pathName: String) : BaseSolution {
 
         println(oxygenRatingList.first().mapToRating() * co2RatingList.first().mapToRating())
     }
+    fun defineCounter() = MutableList(inputList.first().length) { 0 }
 }

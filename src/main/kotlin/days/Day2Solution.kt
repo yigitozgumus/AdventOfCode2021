@@ -30,9 +30,7 @@ fun LocationWithAim.updateLocation(command: Command) {
     }
 }
 
-class Day2Solution(val pathName: String): BaseSolution {
-
-    override val inputList: List<String> by lazy { File(pathName).readLines() }
+class Day2Solution(val inputList: List<String>): BaseSolution {
 
     private fun createCommandList() = inputList
         .map { it.split(" ") }

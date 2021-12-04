@@ -1,5 +1,8 @@
 import days.Day3Solution
+import days.Day4Solution
+import java.io.File
 
 fun main() {
-    Day3Solution("inputs/day3.txt").part1()
+    val inputList = File("inputs/day4.txt").readLines()
+    Day4Solution(inputList).part2()
 }
