@@ -17,12 +17,11 @@ data class Line(val start: Point, val end: Point) {
         start.x == end.x -> getRange(start.y, end.y).map { Point(start.x, it) }
         start.y == end.y && start.x < end.x -> getRange(start.x, end.x).map { Point(it, start.y) }
         start.y == end.y -> getRange(start.x, end.x).map { Point(it, start.y) }
-        else -> getRange(start.x, end.x).zip(getRange(start.y, end.y)).mapToPoint()
+        else -> getRange(start.x, end.x).zip(getRange(start.y, end.y)).map { Point(it.first, it.second) }
     }
 }
 
 fun createLine(pointList: List<Point>) = Line(pointList[0], pointList[1])
-fun List<Pair<Int, Int>>.mapToPoint() = this.map { Point(it.first, it.second) }
 fun getRange(start: Int, end: Int) = if (start < end) (start..end) else (start downTo end)
 
 class Day5Solution(inputList: List<String>) : BaseSolution(inputList) {
