@@ -30,7 +30,7 @@ fun LocationWithAim.updateLocation(command: Command) {
     }
 }
 
-class Day2Solution(val inputList: List<String>): BaseSolution {
+class Day2Solution(inputList: List<String>): BaseSolution(inputList) {
 
     private fun createCommandList() = inputList
         .map { it.split(" ") }

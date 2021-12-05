@@ -6,7 +6,7 @@ import kotlin.math.ceil
 
 const val zeroCode = '0'.code
 
-class Day3Solution(val inputList: List<String>) : BaseSolution {
+class Day3Solution(inputList: List<String>) : BaseSolution(inputList) {
 
     val formattedInput by lazy { inputList.map { it.toCharArray().map { it.code - zeroCode } } }
 

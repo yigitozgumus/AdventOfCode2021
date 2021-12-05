@@ -25,7 +25,7 @@ class BingoBoard(rows: List<String>) {
     fun computeScore(nextNumber: Int) = board.sumOf { it.filter { num -> num > 0 }.sum() } * nextNumber
 }
 
-class Day4Solution(inputList: List<String>) : BaseSolution {
+class Day4Solution(inputList: List<String>) : BaseSolution(inputList) {
 
     private val numberList = inputList.first().split(",").map { it.toInt() }
     private val boardList = inputList.subList(1, inputList.size).filterNot { it == "" }

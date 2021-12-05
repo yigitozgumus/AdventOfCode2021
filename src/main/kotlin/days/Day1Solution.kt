@@ -3,7 +3,7 @@ package days
 import BaseSolution
 import java.io.File
 
-class Day1Solution(val inputList: List<String>): BaseSolution {
+class Day1Solution(inputList: List<String>): BaseSolution(inputList) {
 
     override fun part1() {
        val numberList = File("inputs/day1.txt").readLines().map { it.trim().toInt() }
