@@ -8,7 +8,7 @@ class Day6Solution(inputList: List<String>) : BaseSolution(inputList) {
 
     override fun part1() {
         var generations = lanternList
-        (1..80).forEach { cycle ->
+        (1..80).forEach { _ ->
             val counterTimes = generations.count { it == 0 }
             generations = generations.map { if (it == 0) 6 else it - 1 }
             generations = generations + List(counterTimes) { 8 }
@@ -19,10 +19,10 @@ class Day6Solution(inputList: List<String>) : BaseSolution(inputList) {
     override fun part2() {
         val lanternCounter = MutableList(9){ 0L }
         lanternList.forEach { lanternCounter[it] += 1L }
-        (1..256).forEach { day ->
+        (1..256).forEach { _ ->
             val fishToGenerate = lanternCounter.first()
             (0..lanternCounter.size -2).forEach { lanternCounter[it] = lanternCounter[it+1] }
-            lanternCounter[6] += fishToGenerate 
+            lanternCounter[6] += fishToGenerate
             lanternCounter[8] = fishToGenerate
         }
         println(lanternCounter.sum())
