@@ -2,7 +2,7 @@ import days.*
 import java.io.File
 
 fun main() {
-    val inputList = File("inputs/day8.txt").readLines()
-    Day8Solution(inputList).part1()
-    Day8Solution(inputList).part2()
+    val inputList = File("inputs/day9.txt").readLines()
+    Day9Solution(inputList).part1()
+    Day9Solution(inputList).part2()
 }
